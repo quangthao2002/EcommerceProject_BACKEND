@@ -29,7 +29,7 @@ module.exports = {
       const user = await User.findOne({ email: req.body.email });
       // nếu không tìm thấy người dùng, trả về mã trạng thái 401 và thông báo lỗi.
       if (!user) {
-        rs.status(401).json("Wrong credentials provide a valid emmail");
+        return rs.status(401).json("Wrong credentials provide a valid emmail");
       }
       // Nếu tìm thấy người dùng, hàm tiếp tục giải mã mật khẩu đã được mã hóa của người dùng
       //  bằng cách sử dụng SECRET_KEY.
